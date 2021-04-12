@@ -4,14 +4,11 @@ body {
     font-family: Roboto,sans-serif;
 }
 
-a {
-    text-decoration: none;
-}
     /* Header */
 
 header {
     text-align: center;
-    margin: 4% 4% 2% 4%;
+    padding: 20px;
 }
 
 header img {
@@ -42,8 +39,9 @@ img {
 }
 
 .Arrondi {
-    position : relative;
+    position: relative;
     bottom: 50px;
+    width: 100%;
     border-radius: 50px 50px 0 0;
     background-color: rgb(243, 243, 243);
 }
@@ -59,23 +57,28 @@ h2 {
 
 h3 {
     width: fit-content;
-    margin: 10% 0 5% 5%;
+    margin: 40px 0 5% 5%;
     font-weight: 300;
     font-size: 18px;
     margin-bottom: 0;
 }
 
 h4 {
-    margin-left: 5%;
-    margin-bottom: 5px;
-    padding-top: 10px;
+    width: 82%;
+    margin: 10px 0 5px 5%;
     font-size: 18px;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
 }
 
-p {
-    margin: 5%;
-    margin-top: 0;
-    font-size: 15px;
+.description {
+    width: 80%;
+    margin: 0px 0px 0px 5%;
+    font-size: 16px;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
 }
 
 .Bordure {
@@ -86,33 +89,71 @@ p {
     width: 45px;
 }
 
-.Restaurant i {
+.fa-heart {
     float: right;
     position: relative;
     bottom: 35px;
-    margin-right: 8%;
+    margin-right: 10px;
     font-size: 25px;
-    font-weight: 500;
     color: rgb(85, 85, 85);
 }
 
+.hover-heart {
+    position: relative;
+    bottom: 1px;
+    right: 26px;
+    font-size: 27px;
+    background: linear-gradient(0deg,rgba(147,86,220,0),rgba(255,121,218,0));
+	-webkit-background-clip: text;
+	-webkit-text-fill-color: transparent;
+}
+
 .Plats {
-    display: block;
-    margin: 5% 5% 0 5%;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    margin: 15px 5% 0 5%;
     background-color: white;
-    height: 65px;
+    height: 0px;
     width: 90%;
     box-shadow: 5px 10px 20px rgb(211, 211, 211);
-    border-radius: 20px;
+    border-radius: 15px;
+    overflow: hidden;
+    animation: width 650ms /*forwards*/ cubic-bezier(.5,1.58,.34,.82) 300ms, 
+               height 900ms forwards cubic-bezier(.5,1.58,.34,.82) 300ms;
+}
+
+.AnimationConfirmation {
+    display: flex;
+    position: absolute;
+    width: 0px;
+    height: 65px;
+    background-color: #99E2D0;
+    right: 0;
+    bottom: 0;
+    overflow: hidden;
+    border-radius: 0 15px 15px 0;
+    align-items: center;
+    justify-content: center;
+    transition: width 350ms;
 }
 
 .prix {
-    font-weight: 700;
-    position: relative;
-    bottom: 40px;
     width: fit-content;
-    margin-left: auto;
-    margin-right: 5%;
+    font-weight: 700;
+    position: absolute;
+    margin: 0px 0px 0px 5%;
+    font-size: 15px;
+    bottom: 10px;
+    right: 10px;
+    transition: transform 350ms;
+}
+
+.fa-check-circle {
+    font-size: 28px;
+    color: white;
+    transform: rotate(85deg);
+    transition: transform 350ms;
 }
 
 .btn {
@@ -124,8 +165,15 @@ p {
     color: white;
     font-size: 16px;
     font-weight: 600;
-    box-shadow: 5px 10px 20px rgb(190, 190, 190);
+    box-shadow: 5px 10px 20px rgb(211, 211, 211);
     background-image: linear-gradient(0deg,rgba(147,86,220,.9),rgba(255,121,218,.9));
+    opacity: 1;
+    transition: opacity 200ms, box-shadow 200ms;
+}
+
+.btn:hover {
+    opacity: 0.9;
+    box-shadow: 7px 12px 22px rgb(160, 160, 160);
 }
 
 .Div-Btn {
@@ -135,39 +183,146 @@ p {
 
     /* Footer */
 
-    footer {
+footer {
+    display: flex;
+    flex-direction: column;
+    background-color: #353535;
+    padding: 20px 5% 20px 4%;
+}
+    
+footer p, footer i {
+    color: rgb(230, 230, 230);
+    font-weight: 500;
+}
+    
+footer p {
+    display: inline-block;
+    width: 200px;
+    margin: 5px 0 5px 0;
+}
+    
+.FooterLogo {
+    color: white;
+    font-family: Shrikhand,"cursive";
+    font-size: 20px;
+    padding-bottom: 10px;
+}
+
+.fa-utensils {
+    padding-right: 11px;
+}
+    
+.fa-hands-helping {
+    padding-right: 4px;
+}
+    
+footer a {
+    width: fit-content;
+    text-decoration: none;
+}
+
+footer p:hover {
+    text-decoration: underline;
+}
+
+    /* Animations */
+
+.hover-heart:hover {
+    background: linear-gradient(0deg,rgba(147,86,220,1),rgba(255,121,218,1));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: fadein 0.5s;
+}
+
+@keyframes fadein {
+    from {
+        opacity:0;
+    }
+    to {
+        opacity:1;
+    }
+}
+
+.Plats:hover > .AnimationConfirmation {
+    width: 50px;
+}
+
+.Plats:hover > .AnimationConfirmation i {
+    transform: rotate(0deg);
+}
+
+.Plats:hover > .prix {
+    transform: translateX(-50px);
+}
+
+.Plats:hover > h4 {
+    width: 70%;
+    transition: width 350ms;
+}
+
+.Plats:hover > .description {
+    width: 65%;
+    transition: all 350ms;
+}
+
+@keyframes width {
+    from { width: 0% }
+    to { width: 90% }
+  }
+
+@keyframes height {
+    from { height: 0px }
+    to { height: 65px }
+  }
+
+.delay1 {
+    animation-delay: 400ms;
+}
+.delay2 {
+    animation-delay: 500ms;
+}
+.delay3 {
+    animation-delay: 600ms;
+}
+.delay4 {
+    animation-delay: 700ms;
+}
+.delay5 {
+    animation-delay: 800ms;
+}
+.delay6 {
+    animation-delay: 900ms;
+}
+.delay7 {
+    animation-delay: 1000ms;
+}
+.delay8 {
+    animation-delay: 1100ms;
+}
+.delay9 {
+    animation-delay: 1200ms;
+}
+.delay10 {
+    animation-delay: 1300ms;
+}
+
+    /* Media Queries */
+
+@media screen and (min-width: 1000px) {
+    .Entrée, .PlatsPrincipal, .Dessert {
         display: flex;
         flex-direction: column;
-        background-color: #353535;
-        padding: 20px 5% 20px 5%;
+        width: 100%;
     }
-    
-    footer p, footer i {
-        color: rgb(230, 230, 230);
-        font-weight: 500;
+
+    .menus {
+        display: flex;
+        width: 97%;
+        margin-left: 2%;
+        margin-right: 2%;
     }
-    
-    footer p {
-        display: inline-block;
-        margin-bottom: 0;
-        margin: 5px 0 5px 0;
+
+    .btn {
+        width: 20%;
     }
-    
-    .FooterLogo {
-        color: white;
-        font-family: Shrikhand,"cursive";
-        font-size: 20px;
-        padding-bottom: 10px;
-    }
-    
-    .fa-utensils {
-        padding-right: 11px;
-    }
-    
-    .fa-hands-helping {
-        padding-right: 4px;
-    }
-    
-    footer a {
-        width: fit-content;
-    }
+}
