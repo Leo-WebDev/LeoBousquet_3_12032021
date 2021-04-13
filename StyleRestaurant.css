@@ -79,6 +79,7 @@ h4 {
     text-overflow: ellipsis;
     white-space: nowrap;
     overflow: hidden;
+    transition: width 350ms;
 }
 
 .Bordure {
@@ -103,9 +104,7 @@ h4 {
     bottom: 1px;
     right: 26px;
     font-size: 27px;
-    background: linear-gradient(0deg,rgba(147,86,220,0),rgba(255,121,218,0));
-	-webkit-background-clip: text;
-	-webkit-text-fill-color: transparent;
+	color: transparent;
 }
 
 .Plats {
@@ -119,7 +118,7 @@ h4 {
     box-shadow: 5px 10px 20px rgb(211, 211, 211);
     border-radius: 15px;
     overflow: hidden;
-    animation: width 650ms /*forwards*/ cubic-bezier(.5,1.58,.34,.82) 300ms, 
+    animation: width 650ms cubic-bezier(.5,1.58,.34,.82) 300ms, 
                height 900ms forwards cubic-bezier(.5,1.58,.34,.82) 300ms;
 }
 
@@ -197,7 +196,6 @@ footer p, footer i {
     
 footer p {
     display: inline-block;
-    width: 200px;
     margin: 5px 0 5px 0;
 }
     
@@ -230,8 +228,7 @@ footer p:hover {
 .hover-heart:hover {
     background: linear-gradient(0deg,rgba(147,86,220,1),rgba(255,121,218,1));
     -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    animation: fadein 0.5s;
+    animation: fadein 500ms;
 }
 
 @keyframes fadein {
@@ -262,7 +259,6 @@ footer p:hover {
 
 .Plats:hover > .description {
     width: 65%;
-    transition: all 350ms;
 }
 
 @keyframes width {
@@ -275,9 +271,6 @@ footer p:hover {
     to { height: 65px }
   }
 
-.delay1 {
-    animation-delay: 400ms;
-}
 .delay2 {
     animation-delay: 500ms;
 }

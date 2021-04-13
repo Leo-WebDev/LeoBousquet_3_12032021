@@ -21,7 +21,8 @@ a {
     height: 75%;
     backdrop-filter: blur(25px);
     z-index: 10;
-    animation: blurry 2800ms forwards, width 10ms linear 2700ms 1 forwards;
+    animation: blurry 2800ms forwards,
+               width 10ms linear 2700ms 1 forwards;
 }
 
 @keyframes blurry {
@@ -48,6 +49,10 @@ a {
     border-radius: 50%;
     animation: bouncer 500ms cubic-bezier(0.175, 0.885, 0.32, 1.275) infinite alternate, 
                opacity 2500ms forwards;
+  }
+
+.bouncer .balle1 {
+    opacity: 1;
   }
 
 .bouncer .balle2 {
@@ -237,9 +242,7 @@ header img {
     position: relative;
     left: -25px;
     font-size: 26px;
-    background: linear-gradient(0deg,rgba(147,86,220,0),rgba(255,121,218,0));
-	-webkit-background-clip: text;
-	-webkit-text-fill-color: transparent;
+	color: transparent;
 }
 
 .Section-Restaurant h2, .Section-Restaurant h3, .Section-Restaurant p {
