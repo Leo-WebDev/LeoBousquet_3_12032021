@@ -1,0 +1,357 @@
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Roboto,sans-serif;
+    position: relative;
+}
+
+a {
+    text-decoration: none;
+    color: black;
+}
+
+/* Loader */
+
+.loader {
+    display: flex;
+    justify-content: center;
+    padding-top: 500px;
+    position: fixed;
+    width: 100%;
+    height: 75%;
+    backdrop-filter: blur(25px);
+    z-index: 10;
+    animation: blurry 2800ms forwards,
+               width 10ms linear 2700ms 1 forwards;
+}
+
+@keyframes blurry {
+    from { backdrop-filter: blur(25px) }
+    to { backdrop-filter: blur(0px) }
+  }
+
+@keyframes width {
+    from { width: 100% }
+    to { width: 0% }
+  }
+
+.bouncer {
+    display: flex;
+    justify-content: space-around;
+    width: 100px;
+    height: 100px;
+  }
+
+.bouncer div {
+    width: 20px;
+    height: 20px;
+    background: rgb(191, 97, 219);
+    border-radius: 50%;
+    animation: bouncer 500ms cubic-bezier(0.175, 0.885, 0.32, 1.275) infinite alternate, 
+               opacity 2500ms forwards;
+  }
+
+.bouncer .balle1 {
+    opacity: 1;
+  }
+
+.bouncer .balle2 {
+    animation-delay: 0.1s;
+    opacity: 0.8;
+  }
+
+.bouncer .balle3 {
+    animation-delay: 0.2s;
+    opacity: 0.6;
+  }
+
+.bouncer .balle4 {
+    animation-delay: 0.3s;
+    opacity: 0.4;
+  }
+  
+@keyframes bouncer {
+    from { transform: translateY(0)}
+    to { transform: translateY(-100px)}
+  }
+
+@keyframes opacity {
+    from { opacity: 1}
+    to { opacity: 0}
+  }
+
+/* Header */
+
+header {
+    display: flex;
+    justify-content: center; 
+}
+
+header img {
+    padding: 20px;
+}
+
+/* Main */
+
+.Localisation {
+    display: flex;
+    background-color: rgb(234, 234, 234);
+    align-items: center;
+    justify-content: center;
+    box-shadow: inset 0px 15px 10px -15px rgb(104, 104, 104);
+    padding: 10px;
+}
+
+.Localisation p {
+    margin: 0;
+    padding: 13px;
+    font-size: 20px;
+    font-weight: 600;
+}
+
+.Localisation i {
+    font-size: 20px;
+}
+
+.Introduction {
+    display: flex;
+    flex-direction: column;
+    background-color: rgb(243, 243, 243);
+    align-items: center;
+    padding-bottom: 20px;
+}
+
+.Introduction h2 {
+    width: 55%;
+    font-family: Roboto;
+    font-weight: 900;
+    text-align: center;
+}
+
+.Introduction p {
+    width: 85%;
+    color: rgb(105, 105, 105);
+    font-size: 20px;
+    text-align: center;
+    margin-top: 0;
+}
+
+.btn {
+    width: fit-content;
+    padding: 15px;
+    border-radius: 50px;
+    border: none;
+    color: white;
+    font-size: 16px;
+    font-weight: 600;
+    box-shadow: 5px 10px 20px rgb(211, 211, 211);
+    background-image: linear-gradient(0deg,rgba(147,86,220,1),rgba(255,121,218,1));
+    opacity: 1;
+    transition: opacity 200ms, box-shadow 200ms;
+}
+
+    /* Tuto */
+
+.Tuto {
+    display: flex;
+    margin: 25px auto;
+    height: 70px;
+    align-items: center;
+    background-color: rgb(243, 243, 243);
+    box-shadow: 5px 10px 10px rgb(231, 231, 231);
+    border-radius: 20px;
+    width: 85%;
+}
+
+.Tuto p {
+    text-align: center;
+    font-size: 17px;
+    font-weight: 700;
+    margin: 15px;
+}
+
+.Tuto i {
+    font-size: 20px;
+    color: grey;
+}
+
+.Section-Tuto h2 {
+    padding-left: 5%;
+}
+
+.Numero {
+    width: 19px;
+    border: 4px solid rgb(147,86,220);
+    border-radius: 50%;
+    background-color: rgb(147,86,220);
+    color: white;
+    font-weight: 500;
+    position: relative;
+    right: 20px
+}
+
+    /* Restaurants */
+
+.Section-Restaurant {
+    background-color: rgb(243, 243, 243);
+    padding-bottom: 40px;
+}
+
+.Restaurant {
+    position: relative;
+    margin: 5% 5% 0 5%;
+    overflow: hidden;
+    background-color: white;
+    height: 230px;
+    width: 90%;
+    box-shadow: 5px 10px 20px rgb(190, 190, 190);
+    border-radius: 20px;
+}
+
+.Nouveau {
+    position: absolute;
+    display: flex;
+    align-items: center;
+    border-radius: 5px;
+    right: 20px;
+    top: 20px;
+    height: 30px;
+    width: 90px;
+    background-color: #99E2D0;
+}
+
+.Nouveau p {
+    color: rgb(47, 117, 100);
+    padding-bottom: 7px;
+}
+
+.Restaurant img {
+    object-fit: cover;
+    height: 150px;
+    width: 100%;
+}
+
+.far {
+    position: relative;
+    bottom: 18%;
+    left: 90%;
+    font-size: 25px;
+}
+
+.hover-heart {
+    position: relative;
+    left: -25px;
+    font-size: 26px;
+	color: transparent;
+}
+
+.Section-Restaurant h2, .Section-Restaurant h3, .Section-Restaurant p {
+    padding-left: 5%;
+}
+
+.Section-Restaurant h2 {
+    padding-top: 30px;
+}
+
+.Section-Restaurant h3 {
+    margin: 10px 0 0 0;
+    font-size: 20px;
+    font-weight: 900;
+}
+
+.Section-Restaurant p {
+    margin: 8px 0 0 0;
+    font-size: 20px;
+}
+
+/* Footer */
+
+footer {
+    display: flex;
+    flex-direction: column;
+    background-color: #353535;
+    padding: 20px 5% 20px 5%;
+}
+
+footer p, footer i {
+    color: rgb(230, 230, 230);
+    font-weight: 500;
+}
+
+footer p {
+    display: inline-block;
+    margin-bottom: 0;
+}
+
+.logo {
+    color: white;
+    font-family: Shrikhand,"cursive";
+    font-size: 20px;
+}
+
+.fa-utensils {
+    padding-right: 11px;
+}
+
+.fa-hands-helping {
+    padding-right: 4px;
+}
+
+footer a {
+    width: fit-content;
+}
+
+footer p:hover {
+    text-decoration: underline;
+}
+
+    /* Animations */
+
+.btn:hover {
+    opacity: 0.9;
+    box-shadow: 7px 12px 22px rgb(160, 160, 160);
+}
+
+.hover-heart:hover {
+    background: linear-gradient(0deg,rgba(147,86,220,1),rgba(255,121,218,1));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: fadein 0.5s;
+}
+    
+@keyframes fadein {
+    from {
+        opacity:0;
+    }
+    to {
+        opacity:1;
+    }
+}
+
+    /* Media Queries */
+
+@media screen and (min-width: 1000px) {
+    .Container-Tuto {
+        display: flex;
+        justify-content: center;
+    }
+    .Tuto {
+        margin: 10px;
+        width: 30%;
+    }
+
+    .Container-Restaurant {
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+    }
+    .Container-Restaurant a {
+        width: 48%;
+    }
+    .Restaurant {
+        height: 260px;
+    }
+    .Restaurant img {
+        height: 180px;
+    }
+}
