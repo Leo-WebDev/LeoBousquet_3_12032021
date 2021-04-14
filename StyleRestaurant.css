@@ -307,14 +307,12 @@ footer p:hover {
         flex-direction: column;
         width: 100%;
     }
-
     .menus {
         display: flex;
         width: 97%;
         margin-left: 2%;
         margin-right: 2%;
     }
-
     .btn {
         width: 20%;
     }
