@@ -7,20 +7,19 @@ body {
     /* Header */
 
 header {
-    text-align: center;
-    padding: 20px;
+    display: flex;
+    justify-content: center;
 }
-
+    
 header img {
-    height: fit-content;
-    width: fit-content;
-}
+    padding: 20px;
+} 
 
 header i {
     font-size: 20px;
-    position: relative;
-    top: 10px;
-    float: left;
+    position: absolute;
+    left: 20px;
+    top: 25px;
 }
 
     /* Main */
@@ -32,7 +31,7 @@ header i {
     background-color: rgb(243, 243, 243);
 }
 
-img {
+.Restaurant img {
     width: 100%;
     height: 250px;
     object-fit: cover;
@@ -94,7 +93,6 @@ h4 {
     float: right;
     position: relative;
     bottom: 35px;
-    margin-right: 10px;
     font-size: 25px;
     color: rgb(85, 85, 85);
 }
@@ -118,8 +116,8 @@ h4 {
     box-shadow: 5px 10px 20px rgb(211, 211, 211);
     border-radius: 15px;
     overflow: hidden;
-    animation: width 650ms cubic-bezier(.5,1.58,.34,.82) 300ms, 
-               height 900ms forwards cubic-bezier(.5,1.58,.34,.82) 300ms;
+    animation: width 650ms cubic-bezier(.5,1.58,.34,.82) 200ms, 
+               height 900ms forwards cubic-bezier(.5,1.58,.34,.82) 200ms;
 }
 
 .AnimationConfirmation {
@@ -152,7 +150,7 @@ h4 {
     font-size: 28px;
     color: white;
     transform: rotate(85deg);
-    transition: transform 350ms;
+    transition: transform 200ms;
 }
 
 .btn {
@@ -228,6 +226,7 @@ footer p:hover {
 .hover-heart:hover {
     background: linear-gradient(0deg,rgba(147,86,220,1),rgba(255,121,218,1));
     -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
     animation: fadein 500ms;
 }
 
@@ -258,6 +257,27 @@ footer p:hover {
 }
 
 .Plats:hover > .description {
+    width: 65%;
+}
+
+.Plats:active > .AnimationConfirmation {
+    width: 50px;
+}
+
+.Plats:active > .AnimationConfirmation i {
+    transform: rotate(0deg);
+}
+
+.Plats:active > .prix {
+    transform: translateX(-50px);
+}
+
+.Plats:active > h4 {
+    width: 70%;
+    transition: width 350ms;
+}
+
+.Plats:active > .description {
     width: 65%;
 }
 
@@ -302,7 +322,7 @@ footer p:hover {
     /* Media Queries */
 
 @media screen and (min-width: 1000px) {
-    .Entrée, .PlatsPrincipal, .Dessert {
+    .entree, .PlatsPrincipal, .Dessert {
         display: flex;
         flex-direction: column;
         width: 100%;
